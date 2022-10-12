@@ -11,24 +11,28 @@ from OpenGL.GLU import *
 from Ponto import *
 
 """ Classe Instancia """
-class InstanciaBZ:   
+
+
+class InstanciaBZ:
     def __init__(self):
-        self.posicao = Ponto (0,0,0) 
-        self.escala = Ponto (1,1,1)
-        self.rotacao:float = 0.0
+        self.posicao = Ponto(0, 0, 0)
+        self.escala = Ponto(1, 1, 1)
+        self.rotacao: float = 0.0
         self.modelo = None
         self.t = 0.0
-    
+
     """ Imprime os valores de cada eixo do ponto """
     # Faz a impressao usando sobrecarga de funcao
     # https://www.educative.io/edpresso/what-is-method-overloading-in-python
+
     def imprime(self, msg=None):
         if msg is not None:
-            pass 
+            pass
         else:
-            print ("Rotacao:", self.rotacao)
+            print("Rotacao:", self.rotacao)
 
     """ Define o modelo a ser usada para a desenhar """
+
     def setModelo(self, func):
         self.modelo = func
 
@@ -42,5 +46,3 @@ class InstanciaBZ:
         glScalef(self.escala.x, self.escala.y, self.escala.z)
         self.modelo()
         glPopMatrix()
-
-    
